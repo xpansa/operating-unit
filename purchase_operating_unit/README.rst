@@ -2,15 +2,15 @@
    :target: https://www.gnu.org/licenses/lgpl.html
    :alt: License: LGPL-3
 
-==========================
-Stock with Operating Units
-==========================
+===============================
+Purchase with Operating Units
+===============================
 
 This module introduces the following features:
-- Adds the operating unit to the Warehouse.
-- Adds the operating unit to the Stock Location.
-- Adds the requesting operating unit to stock pickings.
-- Implements user's security access rules.
+- It introduces the operating unit to the purchase order.
+- The operating unit is copied to the invoice.
+- The operating unit is copied to the stock picking.
+- It implements user's security rules.
 
 Installation
 ============
@@ -20,20 +20,13 @@ No external library is used.
 Configuration
 =============
 
-To configure this module, you need to:
-
-* Assign Operating Unit to Warehouses.
-* Assign Operating Unit to Stock Locations.
 
 Usage
 =====
 
-This module defines the operating unit entity and the user's security rules.
-Other modules extend the standard Odoo apps with the OU.
-
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/213/9.0
+   :target: https://runbot.odoo-community.org/runbot/213/7.0
 
 Bug Tracker
 ===========
