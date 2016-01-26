@@ -2,19 +2,15 @@
    :target: https://www.gnu.org/licenses/lgpl.html
    :alt: License: AGPL-3
 
-==============
-Operating Unit
-==============
+==========================
+Stock with Operating Units
+==========================
 
-An operating unit (OU) is an organizational entity part of a company, with
-separate management ownership. Management by OU is aimed to introduce the
-following features:
-
-* Data partitioning from other OU.
-* Own sequencing schemes.
-* User access administration for data processing and reporting.
-* Product and customer independence of OU.
-* OU specific P&L and Balance sheet.
+This module introduces the following features:
+- Adds the operating unit to the Warehouse.
+- Adds the operating unit to the Stock Location.
+- Adds the requesting operating unit to stock pickings.
+- Implements user's security access rules.
 
 Installation
 ============
@@ -26,8 +22,8 @@ Configuration
 
 To configure this module, you need to:
 
-* Assign *Multi Operating Unit* group to user.
-* Go to *Settings / Companies / Operating Units* and create Operating Units.
+* Assign Operating Unit to Warehouses.
+* Assign Operating Unit to Stock Locations.
 
 Usage
 =====
@@ -62,7 +58,7 @@ Images
 Contributors
 ------------
 
-* Eficent Business and IT Consulting Services S.L. <contact@eficent.com>
+* Eficent <contact@eficent.com>
 * Serpent Consulting Services Pvt. Ltd. <support@serpentcs.com>
 
 Maintainer
