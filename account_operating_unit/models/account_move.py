@@ -25,11 +25,14 @@ class AccountMoveLine(models.Model):
         return super(AccountMoveLine, self).create(vals)
 
     @api.model
-    def _query_get(self, domain=None):
-        if self._context.get('operating_unit_ids', False):
-            domain.append(('operating_unit_id', 'in',
-                           self._context.get('operating_unit_ids')))
-        return super(AccountMoveLine, self)._query_get(domain)
+    def _query_get(self, obj='l'):
+        query = super(AccountMoveLine, self)._query_get(obj=obj)
+        if self.env.context.get('operating_unit_ids', False):
+            operating_unit_ids = self.env.context.get('operating_unit_ids')
+            query += 'AND ' + obj + '.operating_unit_id in (%s)' % (
+                ','.join(map(str, operating_unit_ids)))
+        return query
+
 
     @api.one
     @api.constrains('operating_unit_id', 'company_id')
