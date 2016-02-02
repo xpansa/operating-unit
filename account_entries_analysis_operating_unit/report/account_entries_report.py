@@ -16,7 +16,7 @@ class AccountEntriesAnalysis(models.Model):
     def _select(self):
         select_str = super(AccountEntriesAnalysis, self)._select()
         select_str += """
-            l.operating_unit_id as operating_unit_id
+            ,l.operating_unit_id as operating_unit_id
         """
         return select_str
 
@@ -30,17 +30,27 @@ class AccountEntriesAnalysis(models.Model):
         """
         return where_str
 
-    def _group_by(self):
-        group_by_str = """
-           """
-        return group_by_str
-
 #    def _group_by(self):
 #        group_by_str = """
-#            GROUP BY
-#            l.operating_unit_id
-#        """
+#           """
 #        return group_by_str
+
+    def _group_by(self):
+        group_by_str = """
+            GROUP BY
+            l.id,
+            am.date,
+            am.ref,
+            am.state,
+            am.company_id,
+            am.journal_id,
+            p.fiscalyear_id,
+            am.period_id,
+            a.type,
+            a.user_type,
+            l.operating_unit_id
+        """
+        return group_by_str
 
     def init(self, cr):
         tools.drop_view_if_exists(cr, self._table)
