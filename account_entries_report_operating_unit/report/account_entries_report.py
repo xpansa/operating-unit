@@ -8,34 +8,28 @@ from openerp import fields, models
 import openerp.addons.decimal_precision as dp
 
 
-class AccountEntriesAnalysis(models.Model):
+class AccountEntriesReport(models.Model):
     _inherit = "account.entries.report"
 
     operating_unit_id = fields.Many2one('operating.unit', 'Operating Unit')
 
     def _select(self):
-        select_str = super(AccountEntriesAnalysis, self)._select()
+        select_str = super(AccountEntriesReport, self)._select()
         select_str += """
             ,l.operating_unit_id as operating_unit_id
         """
         return select_str
 
     def _from(self):
-        from_str = super(AccountEntriesAnalysis, self)._from()
+        from_str = super(AccountEntriesReport, self)._from()
         return from_str
 
     def _where(self):
-        where_str = """
-        where l.state != 'draft'
-        """
+        where_str = super(AccountEntriesReport, self)._where()
         return where_str
 
-#    def _group_by(self):
-#        group_by_str = """
-#           """
-#        return group_by_str
-
     def _group_by(self):
+#        group_by_str = super(AccountEntriesReport, self)._group_by()
         group_by_str = """
             GROUP BY
             l.id,
