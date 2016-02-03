@@ -29,8 +29,8 @@ class AccountEntriesReport(models.Model):
         return where_str
 
     def _group_by(self):
-#        group_by_str = super(AccountEntriesReport, self)._group_by()
-        group_by_str = """
+        group_by_str = super(AccountEntriesReport, self)._group_by()
+        group_by_str += """
             GROUP BY
             l.id,
             am.date,
