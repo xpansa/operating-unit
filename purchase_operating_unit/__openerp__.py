@@ -14,7 +14,7 @@
     "website": "http://www.eficent.com",
     "category": "Purchase Management",
     "depends": ["purchase", "procurement_operating_unit"],
-    "license": "LGPL-3",
+    "license": "AGPL-3",
     "data": [
         "security/purchase_security.xml",
         "views/purchase_order_view.xml",

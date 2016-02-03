@@ -15,7 +15,6 @@ class ProcurementOrder(models.Model):
     @api.constrains('purchase_line_id')
     def _check_purchase_order_operating_unit(self):
         purchase = self.purchase_line_id
-        print "pppppppppppppppppppppppppppppppppppppppppppp", purchase
         if purchase and\
                 self.purchase.operating_unit_id !=\
                 self.location_id.operating_unit_id:

@@ -21,19 +21,19 @@ class PurchaseOrder(models.Model):
                         self.env['res.users'].
                         operating_unit_default_get(self._uid))
 
-#    @api.one
-#    @api.constrains('operating_unit_id', 'picking_type_id')
-#    def _check_warehouse_operating_unit(self):
-#        picking_type = self.picking_type_id
-#        if picking_type:
-#            if picking_type.warehouse_id and\
-#                    picking_type.warehouse_id.operating_unit_id\
-#                    and self.operating_unit_id and\
-#                    picking_type.warehouse_id.operating_unit_id !=\
-#                    self.operating_unit_id:
-#                raise UserError(_('Configuration error!\nThe\
-#                Quotation / Purchase Order and the Warehouse of picking type\
-#                must belong to the same Operating Unit.'))
+    @api.one
+    @api.constrains('operating_unit_id', 'picking_type_id')
+    def _check_warehouse_operating_unit(self):
+        picking_type = self.picking_type_id
+        if picking_type:
+            if picking_type.warehouse_id and\
+                    picking_type.warehouse_id.operating_unit_id\
+                    and self.operating_unit_id and\
+                    picking_type.warehouse_id.operating_unit_id !=\
+                    self.operating_unit_id:
+                raise Warning(_('Configuration error!\nThe\
+                Quotation / Purchase Order and the Warehouse of picking type\
+                must belong to the same Operating Unit.'))
 
     @api.one
     @api.constrains('operating_unit_id', 'requesting_operating_unit_id',
