@@ -2,23 +2,19 @@
    :target: https://www.gnu.org/licenses/agpl.html
    :alt: License: AGPL-3
 
-===============================
+=============================
 Purchase with Operating Units
-===============================
+=============================
 
 This module introduces the following features:
-- It introduces the operating unit to the purchase order.
-- The operating unit is copied to the invoice.
-- The operating unit is copied to the stock picking.
-- It implements user's security rules.
 
-Installation
-============
+* It introduces the operating unit to the purchase order.
 
-No external library is used.
+* The operating unit is copied to the invoice.
 
-Configuration
-=============
+* The operating unit is copied to the stock picking.
+
+* It implements user's security rules.
 
 
 Usage
@@ -51,7 +47,7 @@ Images
 Contributors
 ------------
 
-* Eficent <contact@eficent.com>
+* Eficent Business and IT Consulting Services, S.L. <contact@eficent.com>
 * Serpent Consulting Services Pvt. Ltd. <support@serpentcs.com>
 
 Maintainer
