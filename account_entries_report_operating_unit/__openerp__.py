@@ -14,6 +14,7 @@
     "depends": ["account_entries_report_hooks"],
     "license": "AGPL-3",
     "data": [
+        'views/account_entries_report_view.xml'
     ],
     'demo': [
     ],
