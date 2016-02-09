@@ -47,7 +47,8 @@ Contributors
 
 * Ecosoft Co., Ltd. <info@ecosoft.co.th>
 * Eficent Business and IT Consulting Services S.L. <contact@eficent.com>
-
+* Serpent Consulting Services Pvt. Ltd. <support@serpentcs.com>
+* Xpansa Group <hello@xpansa.com>
 
 Maintainer
 ----------
