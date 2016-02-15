@@ -16,7 +16,7 @@ class ProcurementOrder(models.Model):
     def _check_purchase_order_operating_unit(self):
         purchase = self.purchase_line_id
         if purchase and\
-                self.purchase.operating_unit_id !=\
+                purchase.operating_unit_id !=\
                 self.location_id.operating_unit_id:
             raise Warning(_('Configuration error!\nThe Quotation / Purchase\
             Order and the Procurement Order must belong to the\
