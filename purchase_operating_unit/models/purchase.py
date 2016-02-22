@@ -38,7 +38,7 @@ class PurchaseOrder(models.Model):
                                            "of incoming shipment",
                                       required=True,
                                       states={'confirmed':
-                                                  [('readonly', True)],
+                                              [('readonly', True)],
                                               'approved': [('readonly', True)],
                                               'done': [('readonly', True)]},
                                       default=_default_picking_type)
