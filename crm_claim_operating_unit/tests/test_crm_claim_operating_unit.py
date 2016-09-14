@@ -16,7 +16,6 @@ class TestCrmClaimOperatingUnit(common.TransactionCase):
         self.company = self.env.ref('base.main_company')
         self.partner = self.env.ref('base.res_partner_1')
         self.grp_sale_manager = self.env.ref('base.group_sale_manager')
-        self.grp_sale_salesman = self.env.ref('base.group_sale_salesman')
 
         # Main Operating Unit
         self.ou1 = self.env.ref('operating_unit.main_operating_unit')
