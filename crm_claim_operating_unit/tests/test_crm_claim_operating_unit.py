@@ -64,9 +64,8 @@ class TestCrmClaimOperatingUnit(common.TransactionCase):
     def test_security(self):
         # User 2 is only assigned to Operating Unit B2C, and cannot
         # Access Claims of Main Operating Unit.
-        record = self.crm_claim_model.sudo(self.user2.id).search(
-                                          [('id', '=', self.crm_claim1.id),
-                                           ('operating_unit_id', '=',
-                                           self.ou1.id)])
+        record = self.crm_claim_model.sudo(
+            self.user2.id).search([('id', '=', self.crm_claim1.id),
+                                   ('operating_unit_id', '=', self.ou1.id)])
         self.assertEqual(record.ids, [], 'User 2 should not have access to '
                          '%s' % self.ou1.name)
