@@ -17,13 +17,3 @@ class CRMClaim(models.Model):
                                         default=lambda self:
                                         self.env['res.users'].
                                         operating_unit_default_get(self._uid))
-
-    @api.multi
-    @api.constrains('operating_unit_id', 'company_id')
-    def _check_company_operating_unit(self):
-        for rec in self:
-            if rec.company_id and \
-                    rec.operating_unit_id and \
-                    rec.company_id != rec.operating_unit_id.company_id:
-                raise UserError(_('The Company in the Claim and in the \
-                 Operating Unit must be the same.'))
