@@ -12,15 +12,6 @@ This module introduces the following features:
 
 * User can only view and manage the claims associated to the warehouse of the Operating Units that he has access to.
 
-Installation
-============
-
-No specific installation requirements.
-
-Configuration
-=============
-
-No configuration is required. 
 
 Usage
 =====
